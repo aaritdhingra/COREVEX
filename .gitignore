@@ -1,0 +1,10 @@
+build/
+*.exe
+*.dll
+*.obj
+*.pdb
+*.log
+*.user
+.vs/
+CMakeCache.txt
+corevex.db

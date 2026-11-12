@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RCC>
+  <qresource prefix="/assets">
+    <file>backgrounds/hero_waves.svg</file>
+    <file>icons/ai_attach.svg</file>
+    <file>icons/ai_checkmark.svg</file>
+    <file>icons/ai_delete.svg</file>
+    <file>icons/ai_expand.svg</file>
+    <file>icons/ai_logo_mark.svg</file>
+    <file>icons/ai_research_badge.svg</file>
+    <file>icons/ai_send.svg</file>
+    <file>icons/ai_settings.svg</file>
+    <file>icons/ai_sparkle.svg</file>
+    <file>icons/ai_sparkle_white.svg</file>
+    <file>icons/ai_user_avatar.svg</file>
+    <file>icons/chevron_down.svg</file>
+    <file>icons/chrome_back.svg</file>
+    <file>icons/chrome_bookmark.svg</file>
+    <file>icons/chrome_download.svg</file>
+    <file>icons/chrome_forward.svg</file>
+    <file>icons/chrome_home.svg</file>
+    <file>icons/chrome_reload.svg</file>
+    <file>icons/chrome_search.svg</file>
+    <file>icons/chrome_settings.svg</file>
+    <file>icons/chrome_tab_close.svg</file>
+    <file>icons/chrome_tab_plus.svg</file>
+    <file>icons/nav_ads_lab.svg</file>
+    <file>icons/nav_ai.svg</file>
+    <file>icons/nav_bookmarks.svg</file>
+    <file>icons/nav_browser.svg</file>
+    <file>icons/nav_downloads.svg</file>
+    <file>icons/nav_history.svg</file>
+    <file>icons/nav_library.svg</file>
+    <file>icons/nav_search.svg</file>
+    <file>icons/nav_settings.svg</file>
+    <file>icons/quick/quick_chatgpt.svg</file>
+    <file>icons/quick/quick_github.svg</file>
+    <file>icons/quick/quick_google.svg</file>
+    <file>icons/quick/quick_leetcode.svg</file>
+    <file>icons/quick/quick_linkedin.svg</file>
+    <file>icons/quick/quick_youtube.svg</file>
+    <file>icons/window_close.svg</file>
+    <file>icons/window_max.svg</file>
+    <file>icons/window_min.svg</file>
+    <file>logos/corevex_logo.svg</file>
+    <file>logos/corevex_watermark.svg</file>
+    <file>logos/corevex_wordmark.svg</file>
+    <file>styles/corevex.qss</file>
+  </qresource>
+</RCC>

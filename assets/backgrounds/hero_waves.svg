@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-base" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0B0C0F" />
+      <stop offset="60%" stop-color="#0B0C0F" />
+      <stop offset="100%" stop-color="#120D12" />
+    </linearGradient>
+
+    <!-- Core Energy Flow Gradient -->
+    <linearGradient id="lava-grad-primary" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF7A00" />
+      <stop offset="50%" stop-color="#FF5A1F" />
+      <stop offset="100%" stop-color="#E01E12" />
+    </linearGradient>
+
+    <!-- Hot Accent Gradient -->
+    <linearGradient id="lava-grad-secondary" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF4500" />
+      <stop offset="60%" stop-color="#F02D24" />
+      <stop offset="100%" stop-color="#FF9E2C" />
+    </linearGradient>
+
+    <!-- Mesh Wireframe Gradient -->
+    <linearGradient id="mesh-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FF7A00" stop-opacity="0.6" />
+      <stop offset="50%" stop-color="#F02D24" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#A21111" stop-opacity="0.05" />
+    </linearGradient>
+
+    <!-- Subtle Grid Pattern for Tech Texture -->
+    <pattern id="tech-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#FFFFFF" stroke-opacity="0.015" stroke-width="1" />
+    </pattern>
+
+    <!-- Left Fade Mask to keep left 60% clean -->
+    <linearGradient id="fade-mask-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#000000" />
+      <stop offset="55%" stop-color="#000000" />
+      <stop offset="70%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#FFFFFF" />
+    </linearGradient>
+
+    <mask id="right-60-mask">
+      <rect x="0" y="0" width="1200" height="600" fill="url(#fade-mask-grad)" />
+    </mask>
+  </defs>
+
+  <!-- Base Dark Canvas -->
+  <rect width="1200" height="600" fill="url(#bg-base)" />
+
+  <!-- Subtle Tech Grid (Full Canvas, extremely faint) -->
+  <rect width="1200" height="600" fill="url(#tech-grid)" />
+
+  <!-- ENERGY WAVES & MESH (Masked to Right Side) -->
+  <g mask="url(#right-60-mask)">
+    
+    <!-- Ambient Energy Glow behind waves (No drop-shadows used, pure gradient shapes) -->
+    <path d="M 650 -50 Q 850 250 800 650 L 1250 650 L 1250 -50 Z" fill="url(#lava-grad-primary)" opacity="0.08" />
+    <path d="M 750 -50 Q 1000 300 880 650 L 1250 650 L 1250 -50 Z" fill="url(#lava-grad-secondary)" opacity="0.12" />
+
+    <!-- Wave Layer 1: Deep Slow Flow -->
+    <path d="M 680 -50 C 820 120, 750 380, 890 650" fill="none" stroke="url(#lava-grad-primary)" stroke-width="1.5" opacity="0.25" />
+    <path d="M 710 -50 C 850 130, 780 370, 920 650" fill="none" stroke="url(#lava-grad-primary)" stroke-width="2" opacity="0.35" />
+    <path d="M 740 -50 C 880 140, 810 360, 950 650" fill="none" stroke="url(#lava-grad-primary)" stroke-width="1" opacity="0.2" />
+
+    <!-- Wave Layer 2: Main Dynamic Ribbon -->
+    <path d="M 760 -50 C 940 100, 800 350, 980 650" fill="none" stroke="url(#lava-grad-secondary)" stroke-width="3" opacity="0.75" />
+    <path d="M 775 -50 C 955 105, 815 355, 995 650" fill="none" stroke="url(#lava-grad-primary)" stroke-width="1.5" opacity="0.85" />
+    <path d="M 790 -50 C 970 110, 830 360, 1010 650" fill="none" stroke="url(#lava-grad-secondary)" stroke-width="4" opacity="0.6" />
+    <path d="M 805 -50 C 985 115, 845 365, 1025 650" fill="none" stroke="url(#lava-grad-primary)" stroke-width="2" opacity="0.5" />
+
+    <!-- Wave Layer 3: High Energy Foreground Streams -->
+    <path d="M 830 -50 C 1020 80, 860 390, 1070 650" fill="none" stroke="url(#lava-grad-secondary)" stroke-width="2.5" opacity="0.9" />
+    <path d="M 860 -50 C 1050 90, 890 380, 1100 650" fill="none" stroke="url(#lava-grad-primary)" stroke-width="1.5" opacity="0.7" />
+    <path d="M 900 -50 C 1080 120, 930 370, 1140 650" fill="none" stroke="url(#lava-grad-secondary)" stroke-width="3" opacity="0.8" />
+
+    <!-- Wave Layer 4: Distant Right-edge Outlines -->
+    <path d="M 950 -50 C 1120 150, 980 350, 1190 650" fill="none" stroke="url(#lava-grad-primary)" stroke-width="1" opacity="0.4" />
+    <path d="M 1000 -50 C 1160 180, 1030 340, 1230 650" fill="none" stroke="url(#lava-grad-secondary)" stroke-width="2" opacity="0.3" />
+
+    <!-- INTERSECTING MESH LINES (Horizontal/Cross Structural Flow) -->
+    <path d="M 650 100 Q 900 120 1250 50" fill="none" stroke="url(#mesh-grad)" stroke-width="1" />
+    <path d="M 670 180 Q 920 210 1250 120" fill="none" stroke="url(#mesh-grad)" stroke-width="1" />
+    <path d="M 700 260 Q 940 300 1250 210" fill="none" stroke="url(#mesh-grad)" stroke-width="1.5" />
+    <path d="M 730 350 Q 970 390 1250 310" fill="none" stroke="url(#mesh-grad)" stroke-width="1" />
+    <path d="M 770 440 Q 1000 480 1250 420" fill="none" stroke="url(#mesh-grad)" stroke-width="1" />
+    <path d="M 820 530 Q 1040 560 1250 520" fill="none" stroke="url(#mesh-grad)" stroke-width="1.5" />
+
+    <!-- Digital Tech Nodes (Intersection Highlights) -->
+    <circle cx="895" cy="198" r="2.5" fill="#FF7A00" opacity="0.9" />
+    <circle cx="948" cy="272" r="2" fill="#FF5A1F" opacity="0.8" />
+    <circle cx="862" cy="336" r="3" fill="#FF9E2C" opacity="0.95" />
+    <circle cx="985" cy="378" r="2" fill="#F02D24" opacity="0.85" />
+    <circle cx="1042" cy="450" r="2.5" fill="#FF5A1F" opacity="0.9" />
+    <circle cx="920" cy="482" r="2" fill="#FF7A00" opacity="0.75" />
+    <circle cx="1115" cy="250" r="2" fill="#FF9E2C" opacity="0.8" />
+    <circle cx="1070" cy="140" r="3" fill="#FF5A1F" opacity="0.9" />
+
+    <!-- Micro Data Particles / Energy Dust -->
+    <circle cx="750" cy="220" r="1" fill="#FF5A1F" opacity="0.5" />
+    <circle cx="790" cy="140" r="1" fill="#FF7A00" opacity="0.6" />
+    <circle cx="830" cy="410" r="1.5" fill="#FF9E2C" opacity="0.7" />
+    <circle cx="880" cy="100" r="1" fill="#F02D24" opacity="0.4" />
+    <circle cx="910" cy="550" r="1" fill="#FF5A1F" opacity="0.6" />
+    <circle cx="960" cy="210" r="1.5" fill="#FF7A00" opacity="0.8" />
+    <circle cx="1010" cy="80" r="1" fill="#FF9E2C" opacity="0.5" />
+    <circle cx="1050" cy="310" r="1" fill="#FF5A1F" opacity="0.6" />
+    <circle cx="1100" cy="520" r="1.5" fill="#F02D24" opacity="0.7" />
+    <circle cx="1140" cy="180" r="1" fill="#FF7A00" opacity="0.5" />
+    <circle cx="1180" cy="390" r="1" fill="#FF9E2C" opacity="0.6" />
+
+    <!-- Subtle Linear Accent Segments (Tech Detailing) -->
+    <line x1="862" y1="336" x2="948" y2="272" stroke="#FF7A00" stroke-width="0.75" opacity="0.4" />
+    <line x1="948" y1="272" x2="985" y2="378" stroke="#F02D24" stroke-width="0.75" opacity="0.4" />
+    <line x1="985" y1="378" x2="1042" y2="450" stroke="#FF5A1F" stroke-width="0.75" opacity="0.3" />
+  </g>
+
+  <!-- Left 60% Vignette Overlay to ensure clean dark contrast for text -->
+  <rect width="720" height="600" fill="#0B0C0F" opacity="0.2" />
+</svg>
