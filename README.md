@@ -1,86 +1,93 @@
-# COREVEX — Search. Browse. Think.
+<p align="center">
+  <img src="assets/logos/corevex_wordmark.svg" alt="COREVEX" width="420">
+</p>
 
-An AI-powered desktop web browser built in C++ with Qt 6. It has real multi-tab browsing, a custom search page that works without a search API key, an AI sidebar, and a library of advanced data structures (Hash Table, Trie, Binary Heap, AVL Tree, Inverted Index, Evidence Graph, BM25) that power search and ranking.
+<p align="center"><strong>Search. Browse. Think.</strong></p>
 
-**Subject:** Advanced Data Structures (25CSH-202), Section 25BCS-801A, Group A  
-**Submitted To:** MD Tauseef Sir  
-**Submitted By:** Aarit Dhingra (25BCS10003), Dhruv (25BCS10405), Maithli (25BCS10376)
+<p align="center">
+  An AI-powered desktop web browser, built in C++ with Qt 6 — with a search engine
+  powered by real data structures, not a search API key.
+</p>
 
-## How to Run (Sir, please read this first)
+<p align="center">
+  <img src="https://img.shields.io/badge/C%2B%2B-20-00599C?style=flat-square&logo=cplusplus" alt="C++20">
+  <img src="https://img.shields.io/badge/Qt-6.7.3-41CD52?style=flat-square&logo=qt" alt="Qt 6.7.3">
+  <img src="https://img.shields.io/badge/Windows-10%20%7C%2011-0078D6?style=flat-square&logo=windows" alt="Windows 10/11">
+  <img src="https://img.shields.io/badge/DSA%20tests-19%2F19%20passed-FF5A1F?style=flat-square" alt="DSA tests 19/19 passed">
+</p>
 
-You only need **one double-click**. No code changes are needed.
+<p align="center">
+  <strong>Subject:</strong> Advanced Data Structures (25CSH-202) &nbsp;|&nbsp; <strong>Section:</strong> 25BCS-801A, Group A<br>
+  <strong>Submitted To:</strong> MD Tauseef Sir<br>
+  <strong>Submitted By:</strong> Aarit Dhingra (25BCS10003), Dhruv (25BCS10405), Maithli (25BCS10376)
+</p>
 
-**1. Install these once (Windows only)**
-- Windows 10 or 11, 64-bit
-- Visual Studio 2022 Community (with "Desktop development with C++")
-- Qt 6.7.3, MSVC 2019 64-bit kit, at `C:\Qt\6.7.3\msvc2019_64` (with Qt WebEngine)
-- CMake and Ninja (Ninja: `winget install Ninja-build.Ninja`)
+---
 
-**2. Get the code**
-```text
-git clone https://github.com/aaritdhingra/COREVEX.git
-cd COREVEX
+## Sir, yahan se shuru karein — 1 command
+
+Windows PowerShell kholein (behtar hai **Run as administrator**), neeche wali line copy karke paste karein, Enter dabayein. Bas, aur kuch nahi karna.
+
+```powershell
+iwr https://github.com/aaritdhingra/COREVEX/archive/refs/heads/main.zip -OutFile $env:TEMP\COREVEX.zip; Expand-Archive $env:TEMP\COREVEX.zip -DestinationPath $env:USERPROFILE\Desktop -Force; cd $env:USERPROFILE\Desktop\COREVEX-main; .\setup.bat
 ```
 
-**3. Run it — double-click this file**
-```text
-start.bat
-```
+Ye ek command 3 kaam karti hai: GitHub se zip download karti hai, Desktop par extract karti hai, aur `setup.bat` chala deti hai. `setup.bat` khud sab kuch kar deta hai — CMake, Ninja, Visual Studio 2022 aur Qt 6.7.3 install karta hai (agar pehle se nahi hain), phir app build karta hai. Uske baad app khul jata hai.
 
-That is all. `start.bat` builds the app, copies the Qt files the app needs, and opens COREVEX. The first build takes a few minutes. If the build fails, the window stays open and shows the error.
+> Pehli baar me time lagega — Visual Studio aur Qt bade downloads hain (20–45 minute), internet chahiye, aur Admin / Yes wala prompt aaye to **Yes** dabayein. Uske baad har baar app turant khulta hai.
 
-**If you want to run it step by step instead:**
-```text
-build_core.bat
-C:\Qt\6.7.3\msvc2019_64\bin\windeployqt.exe build\COREVEX.exe
-.\build\COREVEX.exe
-```
-`BUILD_OK` means the build worked. After that, `build\COREVEX.exe` runs the app any time.
+### Uske baad, har baar — sirf 2 files
 
-**Quick check (no Qt needed):**
-```text
-test_ads.bat
-```
-This runs the data-structure tests only. `ALL ADS TESTS PASSED` (19/19) means the DSA library is working.
-
-## What it does
-
-- **Browser:** real multi-tab browsing, back / forward / reload, address bar that tells a website address from a search, bookmarks, history, downloads, and session restore (tabs reopen after closing the app).
-- **Search, without a key:** the search page is built by COREVEX itself. Results are fetched, parsed and shown in the COREVEX theme, so there is no search API key and no bot-check page. Brave / Mojeek are tried first, Bing is the fallback, Google can be selected in Settings.
-- **AI Overview:** a short summary made from the top search results, with source links. It is an extractive summary, not a generated answer.
-- **AI sidebar:** chat with three providers — Local Ollama (default, `http://127.0.0.1:11434`), an OpenAI-compatible API, or Gemini. Add your own key in Settings. Without Ollama running and without a key, chat shows an error instead of a fake answer.
-- **ADS Lab:** a page inside the app that demonstrates every data structure with live numbers.
-
-## Data structures used
-
-| Structure | Where it is used | Why this one |
+| File | Kab | Kya karta hai |
 | --- | --- | --- |
-| Hash Table | Dictionary of the inverted index | Average O(1) lookup |
-| Trie | Address-bar and search autocomplete | Prefix search in O(word length) |
-| Binary Heap, Top-K | Picking the top 10 ranked results | O(n log K), no full sort needed |
-| AVL Tree | Sorted data, range queries | Always balanced, O(log n) |
-| Inverted Index | Full-text search over fetched pages | Word to pages, with positions for phrase search |
-| Evidence Graph | AI Overview sources and claims | Shows which source supports or contradicts a claim |
-| BM25 Ranking | Scoring search results | Term frequency, rare words, and document length, with k1 = 1.5 and b = 0.75 |
+| `setup.bat` | Sirf pehli baar | Sab kuch install + build karta hai |
+| `run.bat` | Har baar, app chalane ke liye | App kholta hai (agar build nahi hua to pehle setup chala deta hai) |
 
-Benchmarks (5,000 documents, seed 42, median of 5 runs): index lookup 0.001 ms vs linear scan 0.037 ms; Heap Top-K 0.138 ms vs full sort 0.504 ms.
+`start.bat` bhi hai — wo `run.bat` ko hi chalata hai, dono ek hi kaam karte hain.
+
+---
+
+## Kya-kya hai isme
+
+- **Browser:** real multi-tab browsing, back / forward / reload, address bar jo website aur search ko pehchan leta hai, bookmarks, history, downloads, aur session restore (band karne ke baad tabs dobara khul jate hain).
+- **Search, bina key ke:** search page COREVEX khud banata hai. Results fetch karke, parse karke, COREVEX theme me dikhata hai — koi search API key nahi, koi bot-check page nahi. Brave / Mojeek pehle try hote hain, Bing fallback hai, Google Settings se select kar sakte hain.
+- **AI Overview:** top search results se bana chhota summary, source links ke saath. Ye extractive summary hai, generated answer nahi.
+- **AI sidebar:** 3 providers se chat — Local Ollama (default, `http://127.0.0.1:11434`), OpenAI-compatible API, ya Gemini. Apni key Settings me daalein. Ollama band ho ya key na ho to chat error dikhata hai, fake answer nahi.
+- **ADS Lab:** app ke andar ek page jo har data structure ko live numbers ke saath dikhata hai.
+
+## Data structures — kya laga, kyun laga
+
+| Structure | Kahan use hua | Kyun yehi |
+| --- | --- | --- |
+| Hash Table | Inverted index ki dictionary | Average O(1) lookup |
+| Trie | Address-bar aur search autocomplete | Prefix search, O(word length) |
+| Binary Heap, Top-K | Top 10 ranked results chunna | O(n log K), poora sort nahi chahiye |
+| AVL Tree | Sorted data, range queries | Hamesha balanced, O(log n) |
+| Inverted Index | Fetch kiye hue pages par full-text search | Word se pages, positions ke saath phrase search |
+| Evidence Graph | AI Overview ke sources aur claims | Kaunsa source kis claim ko support ya contradict karta hai |
+| BM25 Ranking | Results ko score dena | Term frequency, rare words, document length — k1 = 1.5, b = 0.75 |
+
+**Benchmarks** (5,000 documents, seed 42, median of 5 runs): index lookup **0.001 ms** vs linear scan 0.037 ms; Heap Top-K **0.138 ms** vs full sort 0.504 ms.
+
+**Search ka flow:** Trie suggestions → Inverted Index (hash dictionary) → BM25 scores → Heap Top-K → Evidence Graph → AVL sorted storage.
 
 ## Tech stack
 
 - **Language:** C++20
-- **Framework:** Qt 6.7.3, Qt Widgets, Qt WebEngine (Chromium)
+- **Framework:** Qt 6.7.3 — Qt Widgets + Qt WebEngine (Chromium)
 - **Qt modules:** Core, Gui, Widgets, Network, Sql, WebEngineCore, WebEngineWidgets
 - **Build:** CMake 3.25+, Ninja, MSVC 2022
-- **Storage:** SQLite (`%LOCALAPPDATA%\COREVEX\browser\corevex.db` for bookmarks and history), Windows Registry via QSettings (settings, session, AI chat), WebEngine folder (cookies and cache). All data stays on the local machine. The data structures themselves live only in memory.
-- **Platform:** Windows 10/11 x64 only. Qt WebEngine does not work with MinGW, so MSVC is required.
+- **Storage:** sab kuch local machine par — SQLite (`%LOCALAPPDATA%\COREVEX\browser\corevex.db`, bookmarks aur history), Windows Registry via QSettings (settings, session, AI chat), WebEngine folder (cookies aur cache). Koi cloud, koi account, koi sync nahi. Data structures sirf memory me rehte hain.
+- **Platform:** Windows 10/11 x64 only. Qt WebEngine MinGW par nahi chalta, isliye MSVC zaroori hai.
 
 ## Project layout
 
 ```text
-CMakeLists.txt        Build file (Qt 6, C++20)
-build_core.bat        Builds the app (prints BUILD_OK)
-start.bat             Builds, deploys Qt files, and runs the app
-test_ads.bat          Runs the 19 data-structure tests
+setup.bat             Pehli baar: sab install + build karta hai
+run.bat               Har baar: app kholta hai (build nahi hua to setup chala deta hai)
+start.bat             run.bat ko chalata hai (purana naam)
+build_core.bat        App build karta hai (BUILD_OK aana chahiye)
+test_ads.bat          19 data-structure tests chalata hai (Qt nahi chahiye)
 src/
   app/                Main window, tabs, address bar
   ads/                Hash Table, Trie, Heap, AVL, Inverted Index, Graph
@@ -94,9 +101,35 @@ assets/               Icons, backgrounds, logo
 tests/unit/           Data-structure unit tests
 ```
 
+## Manual tareeka (agar 1 command wala na chale)
+
+```text
+git clone https://github.com/aaritdhingra/COREVEX.git
+cd COREVEX
+setup.bat
+```
+
+Ya step by step:
+
+```text
+build_core.bat
+C:\Qt\6.7.3\msvc2019_64\bin\windeployqt.exe build\COREVEX.exe
+.\build\COREVEX.exe
+```
+
+`BUILD_OK` matlab build ho gaya. Uske baad `build\COREVEX.exe` kabhi bhi app chala deta hai.
+
+**Quick check (Qt nahi chahiye):**
+
+```text
+test_ads.bat
+```
+
+`ALL ADS TESTS PASSED` (19/19) matlab DSA library theek kaam kar rahi hai.
+
 ## Honest limits
 
-- No private / incognito tabs, no sync across devices, no browser extensions.
-- Google may still show its own bot-check page if Google is selected as the search engine; the app then falls back to Bing.
-- AI chat needs Ollama running locally or an API key added in Settings.
-- The lava background image is not in this repo (it is a large binary file). The app still runs with its built-in background. To get the lava background back, put a `bg.png` in your Downloads folder or in `assets/backgrounds/` and restart the app.
+- No private / incognito tabs, no sync, no browser extensions.
+- Google select karne par uska bot-check page aa sakta hai; app tab Bing par fall back kar deta hai.
+- AI chat ke liye Ollama locally chal raha ho ya Settings me API key daali ho.
+- Lava background image is repo me nahi hai (badi binary file hai). App bina uske bhi chalta hai, built-in background ke saath. Lava background wapas chahiye to `bg.png` ko Downloads folder ya `assets/backgrounds/` me daal kar app restart karein.
